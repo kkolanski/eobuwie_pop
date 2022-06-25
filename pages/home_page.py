@@ -1,4 +1,5 @@
 from pages.base_page import BasePage
+from pages.registration_page import RegistrationPage
 from selenium.webdriver.common.by import By
 
 class HomePageLocators:
@@ -21,3 +22,5 @@ class HomePage(BasePage):
         Clicks Register link
         """
         self.driver.find_element(*HomePageLocators.REGISTER_LINK).click()
+        # Zwróć instancję nowej strony (Strona Rejestracji)
+        return RegistrationPage(self.driver)
